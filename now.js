@@ -1,3 +1,42 @@
+//Get elements here
+let form = document.getElementById("form");
+
+//Creating Elements
+let topWrapper = document.createElement("div");
+let nameLabel = document.createElement("label");
+let nameInput = document.createElement("input");
+let ageLabel = document.createElement("label");
+let ageInput = document.createElement("input");
+let br = document.createElement("br");
+let gradeLabel = document.createElement("label");
+let gradeInput = document.createElement("input");
+
+//set attributes here
+topWrapper.setAttribute("id", "topwrap");
+nameLabel.setAttribute("id", "nameLabel");
+nameInput.setAttribute("type", "text");
+nameInput.setAttribute("id", "nameInput");
+ageLabel.setAttribute("id", "ageLabel");
+ageInput.setAttribute("id", "ageInput");
+ageInput.setAttribute("type", "number");
+gradeLabel.setAttribute("id", "gradeLabel");
+gradeInput.setAttribute("type", "number");
+
+//Append here
+form.appendChild(topWrapper);
+topWrapper.appendChild(nameLabel);
+topWrapper.appendChild(nameInput);
+topWrapper.appendChild(br);
+topWrapper.appendChild(ageLabel);
+topWrapper.appendChild(ageInput);
+topWrapper.appendChild(br);
+topWrapper.appendChild(gradeLabel);
+topWrapper.appendChild(gradeInput);
+//innerHTML
+nameLabel.innerHTML = "Student Name:";
+ageLabel.innerHTML = "Age:";
+gradeLabel.innerHTML = "Grade:";
+
 let course1 = ["French", "English", "Math", "SCience"];
 let course2 = ["B.D.T", "Chemistry", "Physics", "Geography"];
 let course3 = ["Government", "Accounting", "Finance", "Management"];
