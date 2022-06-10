@@ -181,15 +181,6 @@ function pupil(name, age, grade) {
   nameInput.value = name;
   let newPupil = new Student(name, age, grade);
   console.log(newPupil);
-
-  //   submitBtn.addEventListener("click", () => {
-  //     if (nameInput.value != " ") {
-  //       Student.setName(nameInput);
-  //       console.log(nameInput.value);
-  //     } else {
-  //       console.log("Are you mad");
-  //     }
-  //   });
 }
 
 function validator() {
