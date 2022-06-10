@@ -70,7 +70,7 @@ warn3.style.display = "none";
 warn.style.color = "red";
 warn2.style.color = "red";
 warn3.style.color = "red";
-
+table.style.display = "none";
 let nameValue = nameInput.value;
 let course1 = ["French", "English", "Math", "SCience"];
 let course2 = ["B.D.T", "Chemistry", "Physics", "Geography"];
@@ -208,6 +208,8 @@ const count = {
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
   validator();
+  table.style.display = "block";
+  stable.style.display = "none";
 
   count.setCount(1);
   warn.style.display = "none";
@@ -216,7 +218,11 @@ submitBtn.addEventListener("click", (e) => {
   if (!validator()) {
     return false;
   }
-  let person = new Student(nameInput.value, ageInput.value, gradeInput.value);
+  let person = new Student(
+    nameInput.value,
+    Number(ageInput.value),
+    Number(gradeInput.value)
+  );
   let manes = nameInput.value;
   let ages = ageInput.value;
   let grades = gradeInput.value;
@@ -240,4 +246,38 @@ submitBtn.addEventListener("click", (e) => {
     </tr> 
 
         `;
+});
+let stable = document.getElementById("search-table");
+stable.style.display = "none";
+let searchBody = document.getElementById("search-body");
+let searchBtn = document.getElementById("sear");
+let searchInput = document.getElementById("seach");
+let momo = document.getElementById("momo");
+
+function searchDisplay() {
+  let searches = searchInput.value;
+  let result = searchStudent(searches);
+  let grades = gradeInput.value;
+
+  count.setCount(1);
+  for (index in result) {
+    searchBody.innerHTML += `<tr>
+    <th scope="row" id="row1">${index}</th>
+    <td id="mana">${result[index].getName()}</td>
+          <td id="man">
+            ${result[index].getAge()}
+          </td>
+          <td id="mana">${result[index].getnewGrade()}</td>
+          <td id="mana">${result[index].getCourses()}</td>
+    </tr>`;
+  }
+}
+
+searchBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  searchDisplay();
+  count.setCount(1);
+  // searchInput = null;
+  stable.style.display = "block";
+  table.style.display = "none";
 });
